@@ -1,9 +1,9 @@
 .online{
-  color: green;
+  background-color: #04724d;
 }
 
 .offline{
-  color: red;
+  background-color: #586f7c;
 }
 
 a {
@@ -37,10 +37,12 @@ h1{
 }
 
 li {
+  border: 1px solid white;
   padding-left: 20px;
   height: 40px;
   line-height: 40px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 ul {
