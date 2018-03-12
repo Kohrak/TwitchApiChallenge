@@ -16,11 +16,11 @@ function checkOnline(user) {
 
 function displayStatus(user, status){
   var element = document.getElementById(user);
-  element.innerHTML += "<a href=https://www.twitch.tv/" + user + " target='_blank'> - " + status + "</a>";
+  element.innerHTML +="<span class='status'>"  + status + "</span>";
   if(status === "offline"){
-    element.setAttribute("class", "offline");
+    element.setAttribute("class", "tw offline");
   } else {
-    element.setAttribute("class", "online");
+    element.setAttribute("class", "tw online");
   }
 }
 
@@ -36,7 +36,7 @@ function offline(user){
 function addUser(user){
  var element = document.createElement("li");
  element.setAttribute("id", user);
- element.innerHTML = user;
+ element.innerHTML = "<a href=https://www.twitch.tv/" + user + " target='_blank'>" + user + "</a>"
  document.getElementById("userlist").appendChild(element);
 }
 
@@ -49,5 +49,16 @@ function displayUsers(userNames){
     checkOnline(userNames[i]);
   }
 }
+function show(status){
+  var lis = document.querySelectorAll("li")
+  for (var i = 0; i < lis.length; i++){
+    if (lis[i].classList.contains(status)){
+      lis[i].style.display = "block";
+    } else {
+      lis[i].style.display = "none";
+    }
+  }
+}
+
 
 displayUsers(userNames);
