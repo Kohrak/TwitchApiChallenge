@@ -16,11 +16,10 @@ function checkOnline(user) {
 
 function displayStatus(user, status){
   var element = document.getElementById(user);
+  element.innerHTML += "<a href=https://www.twitch.tv/" + user + " target='_blank'> - " + status + "</a>";
   if(status === "offline"){
-    element.textContent += " - " + status;
     element.setAttribute("class", "offline");
   } else {
-    element.textContent += " - " + status;
     element.setAttribute("class", "online");
   }
 }

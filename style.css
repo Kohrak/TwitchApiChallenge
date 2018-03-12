@@ -5,3 +5,8 @@
 .offline{
   color: red;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
