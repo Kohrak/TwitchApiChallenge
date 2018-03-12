@@ -6,23 +6,32 @@ function checkOnline(user) {
   xhr.onload = function handleRequest() {
     var twtv = JSON.parse(xhr.responseText);
     if (twtv.stream !== null){
-      online(user);
+      displayStatus(user, twtv.stream.channel.status);
     } else {
-      offline(user);
+      displayStatus(user, "offline");
     }
   }
 }
 
-function online(user){
+
+function displayStatus(user, status){
   var element = document.getElementById(user);
-  element.textContent += " online";
-  element.setAttribute("class", "online");
+  if(status === "offline"){
+    element.textContent += " - " + status;
+    element.setAttribute("class", "offline");
+  } else {
+    element.textContent += " - " + status;
+    element.setAttribute("class", "online");
+  }
+}
+
+function online(user){
+
 }
 
 function offline(user){
   var element = document.getElementById(user);
-  element.textContent += " offline";
-  element.setAttribute("class", "offline");
+
 }
 
 function addUser(user){
