@@ -60,5 +60,15 @@ function show(status){
   }
 }
 
+document.querySelector("#onlineB").addEventListener("click", function(){
+  show("online");
+});
+document.querySelector("#offlineB").addEventListener("click", function(){
+  show("offline");
+});
+document.querySelector("#allB").addEventListener("click", function(){
+  show("tw");
+});
+
 
 displayUsers(userNames);

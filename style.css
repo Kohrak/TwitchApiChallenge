@@ -53,3 +53,8 @@ ul {
   text-align: right;
   margin-left: 30px;
 }
+
+button {
+  background: none;
+  border: none;
+}
